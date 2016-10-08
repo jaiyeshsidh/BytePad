@@ -1,8 +1,4 @@
-/*!
- * Start Bootstrap - New Age v3.3.7 (http://startbootstrap.com/template-overviews/new-age)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+
 .heading-font {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
@@ -58,8 +54,12 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+#navbar-width{
+  padding-left: 50px;
+  padding-right: 50px;
+}
 .navbar-default {
-  background-color: white;
+  background-color: transparent;
   border-color: rgba(34, 34, 34, 0.05);
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -87,7 +87,7 @@ p {
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .navbar-default .nav > li > a,
 .navbar-default .nav > li > a:focus {
@@ -127,7 +127,7 @@ p {
     color: white;
   }
   .navbar-default.affix {
-    background-color: white;
+    background-color: transparent;
     border-color: rgba(34, 34, 34, 0.1);
   }
   .navbar-default.affix .navbar-header .navbar-brand {
@@ -146,10 +146,15 @@ p {
     color: #fdcc52;
   }
 }
+#poweredbysi{
+  font-size: 10px;
+  margin-top: -10px;
+  padding-left: 4px;
+}
 header {
   position: relative;
   width: 100%;
-  min-height: auto;
+  min-height: 100vh;
   overflow-y: hidden;
   background: url("../img/bg-pattern.png"), #7b4397;
   /* fallback for old browsers */
@@ -163,16 +168,22 @@ header .header-content {
   text-align: center;
   padding: 150px 0 50px;
   position: relative;
+  padding-bottom: 100px;
 }
 header .header-content .header-content-inner {
   position: relative;
   max-width: 500px;
+  padding-right: 30px;
+  text-align: justify;
   margin: 0 auto;
 }
 header .header-content .header-content-inner h1 {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   font-size: 30px;
+}
+header .header-content .header-content-inner h5{
+  margin-top: 0px;
 }
 header .header-content .header-content-inner .list-badges {
   margin-bottom: 25px;
@@ -188,14 +199,49 @@ header .device-container {
 header .device-container .screen img {
   border-radius: 3px;
 }
+header .header-search-inner h6{
+  
+}
+header .header-search-inner input + h6{
+  text-align: center;
+  opacity: 0.9;
+  transition: opacity 1s ease;
+}
+header .header-search-inner input:focus + h6{
+  opacity: 0;
+}
+header .header-search-inner:focus{
+ 
+}
+header .header-search-inner input{
+  width: 100%;
+  height: 50px;
+  color: #000;
+  border-radius: 300px;
+  outline: none;
+  border: 0px;
+  padding-left: 30px;
+  padding-right: 60px;
+  background-image: url(../images/search-icon.png);
+  background-size: 4%;
+  background-position: 95%;
+  background-repeat: no-repeat;
+  margin-top: 48vh;
+  -webkit-transition: margin-top 0.7s ease-in-out;
+  transition: margin-top 0.7s ease-in-out;
+}
+header .header-search-inner input:focus{
+  outline: none;
+  margin-top: 10vh;
+}
 @media (min-width: 768px) {
   header {
-    min-height: 100%;
+    min-height: 100vh;
   }
   header .header-content {
     text-align: left;
     padding: 0;
-    height: 100vh;
+    height: 80vh;
   }
   header .header-content .header-content-inner {
     max-width: none;
@@ -404,6 +450,9 @@ footer ul li a.active {
   padding-right: 0;
   padding-left: 0;
 }
+#search{
+  margin-top: 20px;
+}
 .btn-outline {
   color: white;
   border-color: white;
@@ -414,8 +463,8 @@ footer ul li a.active {
 .btn-outline:active,
 .btn-outline.active {
   color: white;
-  background-color: #fdcc52;
-  border-color: #fdcc52;
+  background-color: #292929;
+  border-color: #292929;
 }
 .btn {
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
