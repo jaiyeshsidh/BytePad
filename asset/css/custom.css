@@ -185,6 +185,7 @@ header .header-content .header-content-inner h1 {
 header .header-content .header-content-inner h5{
   letter-spacing: 1px;
   margin-top: 20px;
+  line-height: 1.5;
 }
 header .device-container {
   max-width: 300px;
@@ -288,6 +289,30 @@ header .header-search-inner input:focus{
 #dark-line h5{
   letter-spacing: 6px;
 }
+#brightway{
+  text-align: center;
+  background-color: #292929;
+  color: #fff;
+  padding: 40px 0;
+}
+#brightway h1{
+  font-size: 30px;
+  color: #fff;
+}
+#brightway h5{
+  letter-spacing: 6px;
+}
+#bytepad-btn:hover{
+  background-color: #fe2b65;
+  border-color: #fe2b65;
+}
+#bytepad-btn:focus{
+  border-color: #fff;
+}
+.social-icon span {
+    padding: 10px 20px 40px 20px;
+    color: #fff;
+}
 section {
   padding: 100px 0;
 }
@@ -379,7 +404,6 @@ section.cta .cta-content h2 {
   margin-top: 0;
   margin-bottom: 25px;
   color: white;
-  max-width: 450px;
   font-size: 50px;
 }
 @media (min-width: 768px) {
@@ -443,7 +467,11 @@ section.contact ul.list-social li.social-google-plus a:hover {
   background-color: #eaeaea;
   height: 600px;
   margin: 0 10px;
-  padding: 10px;
+  padding: 50px 100px;
+  text-align: center;
+}
+.feature-block p{
+  font-size: 14px;
 }
 footer {
   background-color: #222222;
