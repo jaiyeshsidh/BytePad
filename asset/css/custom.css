@@ -150,17 +150,17 @@ p {
   font-size: 10px;
   margin-top: -10px;
   padding-left: 4px;
+  letter-spacing: 1px;
 }
+
 header {
   position: relative;
   width: 100%;
   min-height: 100vh;
   overflow-y: hidden;
-  background: url("../img/bg-pattern.png"), #7b4397;
-  /* fallback for old browsers */
-  background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
+  background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to bottom, #fe2b65, #e03b1a);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
+  background: url("../img/bg-pattern.png"), linear-gradient(to bottom, #fe2b65, #e03b1a);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
@@ -183,14 +183,8 @@ header .header-content .header-content-inner h1 {
   font-size: 30px;
 }
 header .header-content .header-content-inner h5{
-  margin-top: 0px;
-}
-header .header-content .header-content-inner .list-badges {
-  margin-bottom: 25px;
-}
-header .header-content .header-content-inner .list-badges img {
-  height: 50px;
-  margin-bottom: 25px;
+  letter-spacing: 1px;
+  margin-top: 20px;
 }
 header .device-container {
   max-width: 300px;
@@ -234,6 +228,22 @@ header .header-search-inner input:focus{
   outline: none;
   margin-top: 10vh;
 }
+#updates{
+  margin-top: 20px;
+  background-color: #fff;
+  color: #fe2b65;
+  text-align: center;
+  border:none;
+}
+.close{
+  background-color: #fff;
+  opacity: 1;
+  color: #fe2b65;
+}
+.close:hover{
+  color: #000;
+  opacity: 1;
+}
 @media (min-width: 768px) {
   header {
     min-height: 100vh;
@@ -264,40 +274,50 @@ header .header-search-inner input:focus{
     font-size: 50px;
   }
 }
+#dark-line{
+  text-align: center;
+  background-color: #292929;
+  color: #fff;
+  padding: 40px 0;
+}
+#dark-line h1{
+  font-size: 45px;
+  text-transform: uppercase;
+  color: #fdc539;
+}
+#dark-line h5{
+  letter-spacing: 6px;
+}
 section {
   padding: 100px 0;
 }
 section h2 {
-  font-size: 50px;
+  font-size: 40px;
 }
 section.download {
-  padding: 150px 0;
+  padding: 100px 0;
+  color: #5a5a5a;
   position: relative;
 }
 section.download h2 {
   margin-top: 0;
   font-size: 50px;
 }
-section.download .badges .badge-link {
-  display: block;
-  margin-bottom: 25px;
-}
-section.download .badges .badge-link:last-child {
-  margin-bottom: 0;
-}
-section.download .badges .badge-link img {
-  height: 60px;
-}
-@media (min-width: 768px) {
-  section.download .badges .badge-link {
-    display: inline-block;
-    margin-bottom: 0;
-  }
-}
 @media (min-width: 768px) {
   section.download h2 {
-    font-size: 70px;
+    font-size: 40px;
+    color: #000;
   }
+  section.download  h2 span{
+    color: #fe2b65;
+  }
+}
+.download-badge{
+  padding: 29px 0px 0px 0px;
+}
+.download-badge img{
+  width: 200px;
+  height: auto;
 }
 section.features .section-heading {
   margin-bottom: 100px;
@@ -414,6 +434,16 @@ section.contact ul.list-social li.social-google-plus a {
 }
 section.contact ul.list-social li.social-google-plus a:hover {
   background-color: #d73925;
+}
+.pad-off{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.feature-block{
+  background-color: #eaeaea;
+  height: 600px;
+  margin: 0 10px;
+  padding: 10px;
 }
 footer {
   background-color: #222222;
