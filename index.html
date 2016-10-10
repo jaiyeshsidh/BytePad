@@ -29,11 +29,13 @@
     <!-- Theme CSS -->
     <link href="asset/css/custom.css" rel="stylesheet">
 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
 </head>
 
 <body id="page-top">
 
-    
+<div class="se-pre-con"></div>
 
     <header>
         <div class="container help-546">
@@ -85,7 +87,7 @@
                     <p>Our app is available on any mobile device! Download now to get started!</p>
                     <hr>
                     <div class="download-badge">
-                    	<img src="asset/images/google-play-badge.svg">
+                    	<a href="https://play.google.com/store/apps/details?id=in.silive.bo" target="_blank"><img src="asset/images/google-play-badge.svg"></a>
                     	<img src="asset/images/app-store-badge.svg">
                     </div>
                 </div>
@@ -176,6 +178,14 @@
 
     <!-- Theme JavaScript -->
     <script src="asset/js/custom.js"></script>
+    <script type="text/javascript">
+        
+$(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+
+    </script>
 
 </body>
 
