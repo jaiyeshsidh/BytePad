@@ -300,6 +300,7 @@ header .header-search-inner input:focus{
   background-color: #292929;
   color: #fff;
   padding: 40px 10px;
+  margin-bottom: 100px;
 }
 #brightway h1{
   font-size: 30px;
@@ -329,6 +330,7 @@ section.download {
   padding: 100px 0;
   color: #5a5a5a;
   position: relative;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3)
 }
 section.download h2 {
   margin-top: 0;
@@ -475,6 +477,7 @@ section.contact ul.list-social li.social-google-plus a:hover {
   margin: 0 10px;
   padding: 50px 100px;
   text-align: center;
+  border-radius: 10px;
 }
 .feature-block:hover{
   background-color: #efefef;
@@ -512,7 +515,7 @@ footer ul li a.active {
 #social-bar{
   background-color: #424242; 
   padding: 0; 
-  margin-bottom: 70px;
+  margin-bottom: 0px;
 }
 .bg-primary {
   background: #fdcc52;
@@ -560,6 +563,9 @@ footer ul li a.active {
 }
 #features-container{
   padding: 0 95px;
+}
+#id-link{
+  color: #fe2b65;
 }
 @media(max-width: 2600px)and (min-width: 1500px){
   #mock-bytepad{
@@ -699,16 +705,14 @@ footer ul li a.active {
     background-repeat: no-repeat;
   }
   footer {
-    background-color: #292929;
     padding: 25px 0;
-    color: rgba(255, 255, 255, 0.3);
     text-align: center;
     position: relative;
     bottom: auto;
     width: auto;
   }
-  #social-bar{
-    margin-bottom: 0px;
+  #brightway{
+    margin-bottom: 10px;
   }
 }
 @media(max-width: 420px){
@@ -717,7 +721,7 @@ footer ul li a.active {
     height: 565px;
   }
   header{
-    padding-top: 20vh;
+    padding-top: 15vh;
   }
 }
 @media(max-width: 320px){
@@ -737,12 +741,12 @@ footer ul li a.active {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #222222;
+  background: #fdc539;
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #222222;
+  background: #fdc539;
 }
 img::selection {
   color: white;
