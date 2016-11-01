@@ -129,7 +129,7 @@ header .header-content-right {
 header .header-content-left .header-content-inner {
   position: relative;
   max-width: 500px;
-  padding-right: 30px;
+  /* padding-right: 30px; */
   text-align: justify;
   margin: 0 auto;
 }
@@ -577,7 +577,7 @@ footer ul li a.active {
     margin: 0 auto;
   }
   header{
-    padding-top: 25vh;
+    /* padding-top: 25vh; */
   }
   header .header-search-inner{
     position: fixed;
@@ -673,7 +673,7 @@ footer ul li a.active {
     height: 565px;
   }
   header{
-    padding-top: 15vh;
+    /* padding-top: 15vh; */
   }
 }
 @media(max-width: 320px){
@@ -787,6 +787,54 @@ body {
 }
 #header .header-search-inner input:focus + .branding{
   margin-top: -40px;
+}
+@media (max-width: 768px){
+  #header .header-search-inner input{
+    width: 100%;
+  }
+  header .header-content-left .header-content-inner {
+    position: relative;
+    max-width: 500px;
+     padding-right: 0px; 
+    text-align: justify;
+    margin: 0 auto;
+  }
+  header .header-content-left {
+    text-align: center;
+    padding: 0px 10px;
+    position: relative;
+    padding-bottom: 0px;
+    border-right: none;
+    margin: 40px auto;
+  }
+  header .header-content-right {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    padding-bottom: 0px;
+    margin: 0;
+  }
+  .download-badge img{
+    width: 49%;
+    display: inline-block;
+    height: auto;
+  }
+}
+@media (max-width: 369px){
+  #header p{
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+}
+@media (max-width: 320px){
+  #header{
+    padding-top: 22vh;
+  }
+}
+@media (max-height: 409px){
+  #header{
+    padding-top: 10vh;
+  }
 }
 
 
