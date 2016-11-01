@@ -723,11 +723,13 @@ body {
 }
 #header{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   /*background-color: #383838;*/
   background-image: url(../images/land-bg.jpg);
   background-size: cover;
-  padding-top: 34vh;
+  padding: 20% 0;
+  padding: 34vh 0;
+  /* padding: 20% 0; */
   /* padding: 15em 0em; */
   margin-left: auto;
   margin-right: auto;
@@ -828,7 +830,7 @@ body {
 }
 @media (max-width: 320px){
   #header{
-    padding-top: 22vh;
+    padding: 22vh 0;
   }
 }
 @media (max-height: 409px){
