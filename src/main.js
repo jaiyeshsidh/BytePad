@@ -34,7 +34,6 @@ new Vue({
             //return v.toLowerCase();
             return val + ' - ' + subjectCode[key];
           });
-
           this.subjects = subjectName;
         });
       }

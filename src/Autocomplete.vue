@@ -74,6 +74,7 @@ export default {
             this.open = false;
             var subjectID = this.suggestions.indexOf(this.selection);
             //console.log(a);
+
         },
     }
 }
