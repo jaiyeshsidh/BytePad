@@ -1,9 +1,26 @@
-var Vue = require('vue');
+const Vue = require('vue');
 import Autocomplete from './Autocomplete.vue';
-var VueResource = require('vue-resource');
-var _ = require('underscore');
+const VueResource = require('vue-resource');
+const _ = require('underscore');
 
 Vue.use(VueResource);
+
+Vue.directive('focus',{
+    priority: 100,
+    bind: function() {
+      var self = this;
+      this.bound = true;
+
+      Vue.nextTick(function() {
+        if (self.bound === true) {
+          self.el.focus();
+        }
+      });
+    },
+    unbind: function(){
+      this.bound = false;
+    }
+});
 
 new Vue({
     el: 'body',
