@@ -1,14 +1,11 @@
 const Vue = require('vue');
 import Autocomplete from './Autocomplete.vue';
 const VueResource = require('vue-resource');
-// const VueRouter = require('vue-router');
+
 const _ = require('underscore');
 
 // using vue-resource with Vue
 Vue.use(VueResource);
-
-// using vue-router with Vue
-// Vue.use(VueRouter);
 
 Vue.directive('focus',{
     priority: 100,

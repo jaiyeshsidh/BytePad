@@ -71,6 +71,14 @@ export default {
             }
         },
 
+        blur() {
+          this.open = false;
+        },
+
+        focus() {
+          this.open = true;
+        },
+
         suggestionClick(index) {
             // console.log('hey');
             this.selection = this.matches[this.current];
