@@ -1,5 +1,7 @@
 const Vue = require('vue');
 import Autocomplete from './Autocomplete.vue';
+import Questionpapers from './Questionpapers.vue'
+
 const VueResource = require('vue-resource');
 
 const _ = require('underscore');
@@ -7,35 +9,24 @@ const _ = require('underscore');
 // using vue-resource with Vue
 Vue.use(VueResource);
 
-Vue.directive('focus',{
-    priority: 100,
-    bind: function() {
-      var self = this;
-      this.bound = true;
-
-      Vue.nextTick(function() {
-        if (self.bound === true) {
-          self.el.focus();
-        }
-      });
+export default {
+    components: {
+      Autocomplete,
+      Questionpapers
     },
-    unbind: function(){
-      this.bound = false;
-    }
-});
-
-new Vue({
-    el: 'body',
-
-    components: { Autocomplete },
-
-    data: {
-        subjects : [],
-        value: ''
+    data: function() {
+        return {
+          subjects : [],
+          value: '',
+          allPapers: []
+        }
     },
 
     ready: function(){
       this.fetchSubjectList();
+      if (this.$route.name == "search"){
+        this.fetchQuestionPapers(this.$route.query.subjectID)
+      }
     },
 
     methods: {
@@ -55,7 +46,21 @@ new Vue({
           });
           this.subjects = subjectName;
         });
+      },
+      fetchQuestionPapers: function(subjectID) {
+        // console.log("infetchPapers")
+        this.$http.get("http://testapi.silive.in/api/get_list_?subject_id=" + subjectID).then(response => {
+          return response.json()
+        }, response => {
+          if(response){
+            console.log("Error is "+response)
+          }
+        }).then(json => {
+          // this.set(data,questionPapers,json);
+          // console.log(json);
+          this.allPapers = json;
+        });
       }
     }
 
-});
+}
