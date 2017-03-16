@@ -15,7 +15,6 @@ export default {
       session: 0,
       paperType: 0,
       semester: 0
-    }
   },
 
   props: {
@@ -68,6 +67,7 @@ export default {
   },
 
   filters: {
+
     removeExt: function(value) {
       return value.substr(0, value.lastIndexOf("."))
     }

@@ -48,7 +48,6 @@ export default {
         });
       },
       fetchQuestionPapers: function(subjectID) {
-        // console.log("infetchPapers")
         this.$http.get("http://testapi.silive.in/api/get_list_?subject_id=" + subjectID).then(response => {
           return response.json()
         }, response => {
