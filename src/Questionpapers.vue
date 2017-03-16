@@ -68,6 +68,7 @@ export default {
   },
 
   filters: {
+
     removeExt: function(value) {
       return value.substr(0, value.lastIndexOf("."))
     }
