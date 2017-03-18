@@ -25,6 +25,7 @@ export default {
     ready: function(){
       this.fetchSubjectList();
       if (this.$route.name == "search"){
+        // console.log(this.$route.query.subjectID)
         this.fetchQuestionPapers(this.$route.query.subjectID)
       }
     },
@@ -48,6 +49,8 @@ export default {
         });
       },
       fetchQuestionPapers: function(subjectID) {
+        subjectID = subjectID == 0 ? null : subjectID;
+        
         this.$http.get("http://testapi.silive.in/api/get_list_?subject_id=" + subjectID).then(response => {
           return response.json()
         }, response => {

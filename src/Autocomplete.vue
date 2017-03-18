@@ -52,8 +52,13 @@ export default {
             } else {
               var subjectID = this.suggestions.indexOf(this.selection) + 1;
               // console.log(subjectID);
-              router.go('/search?subjectID=' + subjectID);
-              this.$dispatch('get-papers', subjectID);
+              if(subjectID){
+                router.go('/search?subjectID=' + subjectID);
+                this.$dispatch('get-papers', subjectID);
+              } else {
+                router.go('/search?subjectID=' + null);
+                this.$dispatch('get-papers', null);
+              }
               this.selection = "";
             }
         },
@@ -115,8 +120,8 @@ export default {
         v-focus
         v-el:search
     />
-    <ul class="dropdown-menu" style="left">
-        <li v-for="suggestion in matches"
+    <ul class="dropdown-menu col-md-6" style="margin-left: 25%">
+        <li class="row" v-for="suggestion in matches"
             v-bind:class="{'active': isActive($index)}"
             @mouseover="mouseover($index)"
         >

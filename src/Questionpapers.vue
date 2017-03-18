@@ -1,5 +1,6 @@
 <script>
 import Vue from 'vue';
+import Pagination from './Pagination.vue';
 
 const _ = require('underscore');
 
@@ -9,12 +10,18 @@ Vue.use(VueResource);
 
 
 export default {
+  components : { Pagination },
+
   data() {
     return {
       examType: 0,
       session: 0,
       paperType: 0,
-      semester: 0
+      semester: 0,
+      pageOne: {
+                currentPage: 1,
+                totalItemsPerPage: 5
+              }
     }
   },
 
@@ -23,6 +30,14 @@ export default {
   },
 
   computed: {
+    totalItems: function() {
+      return this.subjectPapers.length;
+    },
+
+    papersVisible: function() {
+      return this.subjectPapers.slice((this.pageOne.currentPage-1)*this.pageOne.totalItemsPerPage, this.pageOne.currentPage*this.pageOne.totalItemsPerPage);
+    },
+
     subjectPapers: function() {
       var newPapers = _.map(this.papers, function(val) {
         var temp = {}
@@ -53,13 +68,13 @@ export default {
       // Sort all elements based on selection
       var check = {};
       if(this.examType != 0)
-        check.examType = this.examType
+      check.examType = this.examType
       if(this.session != 0)
-        check.session = this.session
+      check.session = this.session
       if(this.paperType != 0)
-        check.paperType = this.paperType
+      check.paperType = this.paperType
       if(this.semester != 0)
-        check.semester = this.semester
+      check.semester = this.semester
 
       newPapers = _.where(newPapers, check);
 
@@ -78,32 +93,41 @@ export default {
     resetAll: function() {
       this.examType = this.session = this.paperType = this.semester = ""
     },
+
     pdfType: function(type) {
       return type == 'pdf'
-    }
+    },
+
+    pageOneChanged (pageNum) {
+            this.pageOne.currentPage = pageNum
+        }
   }
 }
 </script>
 
 <template>
   <div class="row" style="position:relative">
-    <h3></h3>
     <div class="col-md-10">
-    <template v-if="subjectPapers.length">
-    <ul class="list-group">
-      <li class="list-group-items" v-for="paper in subjectPapers">
-        <div class="well row" :class="{'pdftype': pdfType(paper.fileType)}">
-          <a class="col-md-8" :href="paper.fileUrl">{{paper.fileName | removeExt}}</a>
-          <a :href="paper.openUrl" class="btn btn-info btn-sm col-md-2" target="_blank">
-            <span class="glyphicon glyphicon-open-file"></span> Open File
-          </a>
-          <a :href="paper.fileUrl" class="btn btn-info btn-sm col-md-2" :download="paper.fileUrl">
-            <span class="glyphicon glyphicon-download-alt"></span> Download
-          </a>
-        </div>
+      <template v-if="totalItems">
+        <ul class="list-group">
+          <li class="list-group-items" v-for="paper in papersVisible">
+            <div class="well row" :class="{'pdftype': pdfType(paper.fileType)}">
+              <a class="col-md-8" :href="paper.fileUrl">{{paper.fileName | removeExt}}</a>
+              <a :href="paper.openUrl" class="btn btn-info btn-sm col-md-2" target="_blank">
+                <span class="glyphicon glyphicon-open-file"></span> Open File
+              </a>
+              <a :href="paper.fileUrl" class="btn btn-info btn-sm col-md-2" :download="paper.fileUrl">
+                <span class="glyphicon glyphicon-download-alt"></span> Download
+              </a>
+            </div>
+          </li>
+        </ul>
 
-      </li>
-    </ul>
+        <pagination :current-page="pageOne.currentPage"
+        :total-items="totalItems"
+        :items-per-page="pageOne.totalItemsPerPage"
+        @page-changed="pageOneChanged">
+      </pagination>
     </template>
     <div class="well" v-else>
       No papers found
@@ -154,7 +178,7 @@ export default {
 </template>
 
 <style media="screen">
-  .pdftype a {
-    color: red
-  }
+.pdftype a {
+  color: red
+}
 </style>
