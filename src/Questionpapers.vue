@@ -110,7 +110,7 @@ export default {
     <div class="col-md-10">
       <template v-if="totalItems">
         <ul class="list-group">
-          <li class="list-group-items" v-for="paper in papersVisible">
+          <li class="list-group-items" v-bind:key="paper.fileName" v-for="paper in papersVisible">
             <div class="well row" :class="{'pdftype': pdfType(paper.fileType)}">
               <a class="col-md-8" :href="paper.fileUrl">{{paper.fileName | removeExt}}</a>
               <a :href="paper.openUrl" class="btn btn-info btn-sm col-md-2" target="_blank">

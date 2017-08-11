@@ -23,8 +23,17 @@ export default Main
                     :selection.sync="value"
                     
                     ></autocomplete>
+                    <div class="example">
+                            <div class="search-filter">
+                                <button id="active-filter">All</button>
+                                <button>PUT</button>
+                                <button>ST1</button>
+                                <button>ST2</button>
+                                <button>UT</button>
 
-                    <h6>Eg. Power Electronics or NAS-201 or Maths III</h6>
+                            </div>
+                            <h6>Eg. Power Electronics or NAS-201 or Maths III</h6>
+                        </div>
                 </div>
             </div>
         </div>
