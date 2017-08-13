@@ -7,14 +7,14 @@ Vue.use(VueRouter);
 var router = new VueRouter();
 
 export default {
-
+    
     data() {
         return {
             open: false,
             current: 0
         }
     },
-
+    
     props: {
         suggestions: {
             type: Array,
