@@ -28,41 +28,182 @@ export default Main
             <div id="detail-refine" class="search-pad container container-refine " style=" text-align:right;">
                 <span>Refine your Search</span> 
                 <span class="fa fa-long-arrow-right span-search"></span>
-                <select name="Exam Type" >
+                <select id="examtype" v-model="examType">
                     <option value="select">Select Exam Type</option>
-                    <option>All Exams</option>
-                    <option>UT</option>
-                    <option>PUT</option>
-                    <option>ST2</option>
-                    <option>ST1</option>
+                    <option :value="0">All Exams</option>
+                    <option :value="1">UT</option>
+                    <option :value="2">PUT</option>
+                    <option :value="3">ST2</option>
+                    <option :value="4">ST1</option>
                 </select>
-                <select>
+                <!-- Changed Values -->
+                <select id="session" v-model="session">
                     <option>Select Session</option>
-                    <option>2011-2012</option>
-                    <option>2012-2013</option>
-                    <option>2013-2014</option>
-                    <option>2014-2015</option>
-                    <option>2015-2016</option>
-                    <option>2016-2017</option>
+                    <option :value="0">All Years</option>
+                    <option :value="1">2010-2011</option>
+                    <option :value="2">2011-2012</option>
+                    <option :value="3">2012-2013</option>
+                    <option :value="4">2013-2014</option>
+                    <option :value="5">2014-2015</option>
+                    <option :value="6">2015-2016</option>
+                    <option :value="7">2016-2017</option>
                 </select>
-                <select>
+                <select id="select-paper" v-model="paperType">
                     <option>Select Paper</option>
-                    <option>Question Paper</option>
-                    <option>Answer Paper</option>
+                    <option :value="0">Question Paper</option>
+                    <option :value="1">Answer Paper</option>
                 </select>
-                <select>
+                <select id="sem" v-model="semester">
                     <option>Select Semester</option>
-                    <option>Even Semester</option>
-                    <option>Odd Semester</option>
+                    <option :value="0">Even Semester</option>
+                    <option :value="1">Odd Semester</option>
                 </select>
                 <div style="display:inline;">
                     <button type="submit" value="Go">Go</button>
-                    <button type="reset" value="Reset">Reset</button>
+                    <button type="reset" value="Reset" @click="resetAll">Reset</button>
                 </div>
             </div>
         </div>
     </div>
     <questionpapers :papers="allPapers"></questionpapers>
 
-
 </template>
+
+<style>
+        html,body{
+        height: 100%;
+        padding: 0;
+    }
+    .mob-container{
+        padding:20px 0; 
+        background-color:#242c2d;
+    }
+    #example{
+        margin: 0 0 0 30px !important; 
+        width:calc(100% - 300px) !important; 
+        border-radius:0px !important;
+    }
+    .in-mob-search span{
+        padding: 20px;
+        border-radius:0 0 0 10px;
+    }
+    @media(max-width:768px){
+        #example{
+            width: calc(100% - 245px) !important;
+        }
+    }
+    .thumbnail  {
+        margin-bottom: 12px;
+    }
+    .single-list{
+        background-color: #efefef;
+        padding: 10px 20px;
+        /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.26);*/
+        border: 0 !important;
+    }
+    .single-list:hover{
+        background-color: #ececec;
+    }
+    .single-list .div-info{
+        display: inline-block;
+        width: calc(100% - 124px);
+    }
+    .single-list .div-download{
+        display: inline-block;
+        width: 120px;
+        vertical-align: sub;
+    }
+    .div-download img{
+        height: 50px;
+    }
+    .div-download p{
+        margin: 0;
+        font-size: 12px;
+        text-align: center;
+    }
+    .div-1{
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+    }
+    .div-1 h1{
+        font-size: 22px;
+        margin-top: 10px;
+    }
+    .div-1 p{
+        font-size: 12px;
+        font-weight: bold;
+        color:#797979;
+    }
+    .div-1 span{
+        font-size: 10px;
+        color: #000;
+        background-color: #cecece;
+        padding: 3px 12px;
+        margin: 1px 3px;
+        display: inline-block;
+        border-radius: 20px;
+    }
+    .div-2{
+        display: inline-block;
+        width: 23.9%;
+        /*border-left: 2px solid #dedede;
+        border-right: 2px solid #dedede;*/
+    }
+    .text-sub{
+        font-size: 15px;
+    }
+    .div-3{
+        display: inline-block;
+        width: 23.9%;
+        /*border-right: 2px solid #dedede;*/
+    }
+    .sub-text{
+        font-size: 12px;
+        font-weight: bold;
+        color: #797979;
+    }
+    #main-qwerty{
+        overflow:auto;
+            padding-bottom: 120px;
+            padding-top: 180px;
+    }
+    /*Opera Fix*/
+    body:before {
+        content:"";
+        height:100%;
+        float:left;
+        width:0;
+        margin-top:-32767px;/
+    }
+    @media (min-width: 768px){
+        #main-qwerty{
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+    @media(max-width:768px){
+        
+    }
+    .search-pad{
+        padding:6px 20px;
+    }
+    .span-search{
+        padding:0 10px
+    }
+    @media(max-width: 600px){
+        .span-search{
+            padding: 0;
+        }
+        .search-pad{
+            padding:6px 8px;
+        }
+    }
+    .div-2-3-bar span{
+        display: none;
+    }
+    .container{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    </style>

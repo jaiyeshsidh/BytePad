@@ -127,54 +127,14 @@ export default {
         :total-items="totalItems"
         :items-per-page="pageOne.totalItemsPerPage"
         @page-changed="pageOneChanged">
-      </pagination>
-    </template>
-    <div class="well" v-else>
-      No papers found
+        </pagination>
+      </template>
+      <div class="well" v-else>
+        No papers found
+      </div>
     </div>
+
   </div>
-  <div class="col-md-2">
-    <div class="form-group">
-      <label for="examtype">Exam Type</label>
-      <select id="examtype" class="form-control" v-model="examType">
-        <option :value="0">All Exams</option>
-        <option :value="1">UT</option>
-        <option :value="2">PUT</option>
-        <option :value="3">ST1</option>
-        <option :value="4">ST2</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="session">Session</label>
-      <select id="session"class="form-control" v-model="session">
-        <option :value="0">All Years</option>
-        <option :value="6">2015-16</option>
-        <option :value="5">2014-15</option>
-        <option :value="4">2013-14</option>
-        <option :value="3">2012-13</option>
-        <option :value="2">2011-12</option>
-        <option :value="1">2010-11</option>
-      </select>
-    </div>
-    <div class="well">
-      <div class="checkbox">
-        <label><input type="checkbox" v-model="paperType" :true-value="1" :false-value="0">Question Paper</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" v-model="paperType" :true-value="2" :false-value="0">Solution</label>
-      </div>
-    </div>
-    <div class="well">
-      <div class="checkbox">
-        <label><input type="checkbox" v-model="semester" :true-value="1" :false-value="0">Even</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" v-model="semester" :true-value="2" :false-value="0">Odd</label>
-      </div>
-    </div>
-    <button class="btn btn-primary" type="button" name="button" @click="resetAll">Reset All</button>
-  </div>
-</div>
 </template>
 
 <style media="screen">
@@ -182,3 +142,141 @@ export default {
   color: red
 }
 </style>
+<style>
+        html,body{
+        height: 100%;
+        padding: 0;
+    }
+    .mob-container{
+        padding:20px 0; 
+        background-color:#242c2d;
+    }
+    #example{
+        margin: 0 0 0 30px !important; 
+        width:calc(100% - 300px) !important; 
+        border-radius:0px !important;
+    }
+    .in-mob-search span{
+        padding: 20px;
+        border-radius:0 0 0 10px;
+    }
+    @media(max-width:768px){
+        #example{
+            width: calc(100% - 245px) !important;
+        }
+    }
+    .thumbnail  {
+        margin-bottom: 12px;
+    }
+    .single-list{
+        background-color: #efefef;
+        padding: 10px 20px;
+        /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.26);*/
+        border: 0 !important;
+    }
+    .single-list:hover{
+        background-color: #ececec;
+    }
+    .single-list .div-info{
+        display: inline-block;
+        width: calc(100% - 124px);
+    }
+    .single-list .div-download{
+        display: inline-block;
+        width: 120px;
+        vertical-align: sub;
+    }
+    .div-download img{
+        height: 50px;
+    }
+    .div-download p{
+        margin: 0;
+        font-size: 12px;
+        text-align: center;
+    }
+    .div-1{
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+    }
+    .div-1 h1{
+        font-size: 22px;
+        margin-top: 10px;
+    }
+    .div-1 p{
+        font-size: 12px;
+        font-weight: bold;
+        color:#797979;
+    }
+    .div-1 span{
+        font-size: 10px;
+        color: #000;
+        background-color: #cecece;
+        padding: 3px 12px;
+        margin: 1px 3px;
+        display: inline-block;
+        border-radius: 20px;
+    }
+    .div-2{
+        display: inline-block;
+        width: 23.9%;
+        /*border-left: 2px solid #dedede;
+        border-right: 2px solid #dedede;*/
+    }
+    .text-sub{
+        font-size: 15px;
+    }
+    .div-3{
+        display: inline-block;
+        width: 23.9%;
+        /*border-right: 2px solid #dedede;*/
+    }
+    .sub-text{
+        font-size: 12px;
+        font-weight: bold;
+        color: #797979;
+    }
+    #main-qwerty{
+        overflow:auto;
+            padding-bottom: 120px;
+            padding-top: 180px;
+    }
+    /*Opera Fix*/
+    body:before {
+        content:"";
+        height:100%;
+        float:left;
+        width:0;
+        margin-top:-32767px;/
+    }
+    @media (min-width: 768px){
+        #main-qwerty{
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+    @media(max-width:768px){
+        
+    }
+    .search-pad{
+        padding:6px 20px;
+    }
+    .span-search{
+        padding:0 10px
+    }
+    @media(max-width: 600px){
+        .span-search{
+            padding: 0;
+        }
+        .search-pad{
+            padding:6px 8px;
+        }
+    }
+    .div-2-3-bar span{
+        display: none;
+    }
+    .container{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    </style>
