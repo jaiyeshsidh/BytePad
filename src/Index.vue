@@ -9,32 +9,34 @@ export default Main
 
 <template>
 
+ 
         <div id="header">
-
             <div class="header-search-inner" >
                 <div id="input-holder">
                     <div class="branding">
                         <img src="asset/images/bytepad-logo.png" class="img-responsive center-block">
                         <h1>Bytepad<p>Powered by SOFTWARE INCUBATOR</p></h1>
                     </div>
-                    <!--input type="text" name="Search" placeholder="Enter Subject NAME or SUBJECT-CODE"-->
-                    <autocomplete
-                    :suggestions="subjects"
-                    :selection.sync="value"
-                    
-                    ></autocomplete>
-                    <div class="example">
+                    <div id="search-focus">
+                        <!--input type="text" id="example" name="Search" placeholder="Enter Subject NAME or SUBJECT-CODE"-->
+                        <autocomplete
+                        :suggestions="subjects"
+                        :selection.sync="value"
+                        
+                        ></autocomplete>
+                        <div class="example">
                             <div class="search-filter">
                                 <button id="active-filter">All</button>
                                 <button>PUT</button>
                                 <button>ST1</button>
                                 <button>ST2</button>
                                 <button>UT</button>
-
+                                
                             </div>
                             <h6>Eg. Power Electronics or NAS-201 or Maths III</h6>
                         </div>
-                </div>
+                    </div>
+                </div>  
             </div>
         </div>
 
