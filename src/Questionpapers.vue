@@ -315,7 +315,7 @@ export default {
         height:100%;
         float:left;
         width:0;
-        margin-top:-32767px;/
+        margin-top:-32767px;
     }
     @media (min-width: 768px){
         #main-qwerty{
