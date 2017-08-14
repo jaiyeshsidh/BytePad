@@ -24,7 +24,7 @@ export default Main
                         :selection.sync="value"
                         
                         ></autocomplete>
-                        <div class="example">
+                        <!-- <div class="example">
                             <div class="search-filter">
                                 <button id="active-filter">All</button>
                                 <button>PUT</button>
@@ -34,7 +34,7 @@ export default Main
                                 
                             </div>
                             <h6>Eg. Power Electronics or NAS-201 or Maths III</h6>
-                        </div>
+                        </div> -->
                     </div>
                 </div>  
             </div>
