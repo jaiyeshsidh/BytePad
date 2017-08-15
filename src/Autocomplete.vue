@@ -120,7 +120,7 @@ export default {
         v-focus
         v-el:search
     />
-    <ul class="dropdown-menu col-md-6" style="margin-left: 25%">
+    <ul class="dropdown-menu">
         <li class="row" v-bind:key="suggestion" v-for="suggestion in matches"
             v-bind:class="{'active': isActive($index)}"
             @mouseover="mouseover($index)"
