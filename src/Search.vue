@@ -73,10 +73,10 @@ export default Main
             </div>
         </div>
     </div>
-    <div class="modal fade" id="myModal" role="dialog" style="display: none;">
+    <div class="modal fade" id="myModal" role="dialog" style="display: none;background-color:#fff;">
         <div class="modal-dialog">
             <!-- Modal content-->
-            <div class="modal-content">
+            <div class="modal-content" style="background-color:transparent;">
                 <div class="modal-body" style="padding:0px;">
                     <div id="mob-search-input">
                         <!--input type="text" id="example" name="Search" placeholder="Enter Subject Name Here"-->
@@ -117,7 +117,7 @@ export default Main
                         <div style="display:inline;">
                             <button type="button" class="btn btn-default search-btn" >Search</button>
                             <button class="mob-reset-btn" type="reset" value="Reset" @click="resetAll">Reset</button>
-                            <button class="mob-reset-btn" data-dismiss="modal" style="padding:10px 15px;display:inline;    padding: 20px 25px; display: inline; position: fixed; bottom: 15px; right: 15px;">X</button>
+                            <button class="mob-reset-btn" data-dismiss="modal" style="display:inline;padding: 20px 25px; position: fixed; top: 0; right: 0; color: #242c2d; margin: 5px; background-color: #ffc113; ">X</button>
                         </div>
                     </div>
                     
