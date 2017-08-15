@@ -13,8 +13,8 @@
   letter-spacing: 2px;
 }
 body {
-  height: 100%;
-  width: 100%;
+  /* height: 100%; */
+  /* width: 100%; */
 }
 body {
   font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
@@ -1061,6 +1061,7 @@ select{
 /*Mobile Responsiveness*/
 #mob-search{
   display: none;
+  z-index: 999;
 }
 .mob-container img{
     /*margin-top: -21px;*/
