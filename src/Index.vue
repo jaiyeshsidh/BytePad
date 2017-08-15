@@ -60,7 +60,7 @@ export default Main
                 <div class="col-sm-6 col-sm-pull-6 " >
                     <div class="header-content-left">
                         <div class="header-content-inner">
-                            <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis, tellus vitae ultricies lacinia, tellus enim posuere urna, at tincidunt eros libero sed magna. Donec vestibulum neque eu ornare laoreet. Cras sollicitudin massa at vulputate posuere. Praesent tincidunt arcu venenatis eros finibus commodo. Ut egestas accumsan dolor, vel mollis lacus finibus et. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                            <p >Making efforts in the right direction reaps fruit. Bytepad maximises your effort and helps you to score better. Working smart is as important as working hard. You can search and download previous year Question papers with solutions which can increase your score in exams. You can search ST, PUT, and UT papers of previous year of all branches. As the solutions are provided by the faculties of the college, hence they are authentic and reliable.</p>
                             <a href="#explore" class="btn btn-outline btn-xl page-scroll center-block" id="search">EXPLORE BYTEPAD MORE ...</a>
 
                         </div>
@@ -121,7 +121,7 @@ export default Main
             			<div class="row">
             				<h6>Keywords to your Subject</h6>
             				<h3>Search It. Read It.</h3>
-            				<p>Donec semper urna dui, at vehicula orci imperdiet in. Duis vel aliquam eros, et venenatis nisl. Mauris dolor arcu, mattis in lacus faucibus, vestibulum volutpat mauris.</p>
+            				<p>Get to know the important questions in just a few clicks? Go for Bytepad. Bytepad is a web application to look for previous year question paper for last minute preparation.</p>
             				<p class="hide-320">Donec semper urna dui, at vehicula orci imperdiet in. Duis vel aliquam eros, et venenatis nisl. Mauris dolor arcu, mattis in lacus faucibus, vestibulum volutpat mauris. Phasellus sodales turpis quis lectus suscipit blandit ut vel sem. Sed neque turpis, dapibus vel interdum nec, mollis sit amet metus. Sed ornare eleifend orci, in bibendum nulla pharetra id. Nam non leo laoreet, ornare neque id, sodales enim.</p>
             			</div>
             		</div>

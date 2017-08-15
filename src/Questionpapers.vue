@@ -110,7 +110,7 @@ export default {
 
       <template v-if="totalItems">
 
-        <ul class="list-group">
+        <!-- <ul class="list-group">
           <li class="list-group-items" v-bind:key="paper.fileName" v-for="paper in papersVisible">
             <div class="well row" :class="{'pdftype': pdfType(paper.fileType)}">
               <a class="col-md-8" :href="paper.fileUrl">{{paper.fileName | removeExt}}</a>
@@ -122,7 +122,62 @@ export default {
               </a>
             </div>
           </li>
+        </ul> -->
+
+          <ul class="list-group">
+            <li class="list-group-items" v-bind:key="paper.fileName" v-for="paper in papersVisible">
+            <!-- Single Item -->
+                <div class="thumbnail single-list" :class="{'pdftype': pdfType(paper.fileType)}">
+                    <div class="div-info">
+                        <div class="div-1">
+
+                            <h1><a :href="paper.openUrl" target="_blank" >{{paper.fileName | removeExt}}</a></h1>
+
+                            <p style="margin:0;"> Tags :
+                                <span>{{paper.fileType}}</span>
+                                <span>{{paper.semester}}</span>
+                                <span>{{paper.session}}</span>
+                                <span>{{paper.examType}}</span>
+                            </p>
+                        </div>
+                        <div class="div-2">
+                            <div class="text-center" style="padding:6px; margin:0 10px; border-bottom: 2px solid #dedede;">
+                                <span class="sub-text">Exam Type :</span>
+                                <span class="text-sub">{{paper.examType}}</span>
+                            </div>
+                            <div class="text-center" style="padding:6px;">
+                                <span class="sub-text">Semester :</span>
+                                <span class="text-sub">{{paper.semester}}</span>
+                            </div>
+                        </div>
+                        <div class="div-3">
+                            <div class="text-center" style="padding:6px; margin:0 10px; border-bottom: 2px solid #dedede;">
+                                <span class="sub-text">Session :</span>
+                                <span class="text-sub">{{paper.session}}</span>
+                            </div>
+                            <div class="text-center" style="padding:6px;">
+                                <span class="sub-text">Paper Type :</span>
+                                <span class="text-sub">{{paper.paperType}}</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="div-download">
+                        <a :href="paper.fileUrl" :download="paper.fileUrl"><img src="asset/images/download.png" class="center-block"></a>
+                        <a :href="paper.openUrl"  target="_blank"><p>View</p></a>
+                    </div>
+                    <div class="div-2-3-bar">
+                        <span>{{paper.fileType}}</span>
+                        <span>{{paper.semester}}</span>
+                        <span>{{paper.session}}</span>
+                        <span>{{paper.examType}}</span>
+                    </div>
+                </div>
+
+        
+          </li>
         </ul>
+        
 
         <pagination :current-page="pageOne.currentPage"
         :total-items="totalItems"
@@ -142,48 +197,48 @@ export default {
 
 
 <!-- <div class="thumbnail single-list" v-if="totalItems">
-    <div class="div-info">
-        <div class="div-1">
-            <a :href="paper.openUrl" target="_blank"><h1 v-bind:key="paper.fileName" v-for="paper in papersVisible"></h1></a>
-            <p style="margin:0;"> Tags :
-                <span :class="{'pdftype': pdfType(paper.fileType)}></span>
-                <span>Lorem Ipsum</span>
-                <span>Lorem Ipsum</span>
-                <span>Lorem Ipsum</span>
-            </p>
+        <div class="div-info">
+            <div class="div-1">
+                <a :href="paper.openUrl" target="_blank"><h1 v-bind:key="paper.fileName" v-for="paper in papersVisible"></h1></a>
+                <p style="margin:0;"> Tags :
+                    <span :class="{'pdftype': pdfType(paper.fileType)}></span>
+                    <span>Lorem Ipsum</span>
+                    <span>Lorem Ipsum</span>
+                    <span>Lorem Ipsum</span>
+                </p>
+            </div>
+            <div class="div-2">
+                <div class="text-center" style="padding:6px; margin:0 10px; border-bottom: 2px solid #dedede;">
+                    <span class="sub-text">Exam Type :</span>
+                    <span class="text-sub">PUT</span>
+                </div>
+                <div class="text-center" style="padding:6px;">
+                    <span class="sub-text">Semester :</span>
+                    <span class="text-sub">Odd Semester</span>
+                </div>
+            </div>
+            <div class="div-3">
+                <div class="text-center" style="padding:6px; margin:0 10px; border-bottom: 2px solid #dedede;">
+                    <span class="sub-text">Session :</span>
+                    <span class="text-sub">2011 - 2012</span>
+                </div>
+                <div class="text-center" style="padding:6px;">
+                    <span class="sub-text">Paper Type :</span>
+                    <span class="text-sub">Answer Sheet</span>
+                </div>
+            </div>
         </div>
-        <div class="div-2">
-            <div class="text-center" style="padding:6px; margin:0 10px; border-bottom: 2px solid #dedede;">
-                <span class="sub-text">Exam Type :</span>
-                <span class="text-sub">PUT</span>
-            </div>
-            <div class="text-center" style="padding:6px;">
-                <span class="sub-text">Semester :</span>
-                <span class="text-sub">Odd Semester</span>
-            </div>
+        <div class="div-download">
+            <a :href="paper.fileUrl" :download="paper.fileUrl"><img src="asset/images/download.png" class="center-block"></a>
+            <p>125 kb</p>
         </div>
-        <div class="div-3">
-            <div class="text-center" style="padding:6px; margin:0 10px; border-bottom: 2px solid #dedede;">
-                <span class="sub-text">Session :</span>
-                <span class="text-sub">2011 - 2012</span>
-            </div>
-            <div class="text-center" style="padding:6px;">
-                <span class="sub-text">Paper Type :</span>
-                <span class="text-sub">Answer Sheet</span>
-            </div>
+        <div class="div-2-3-bar">
+            <span>PUT</span>
+            <span>Odd Semester</span>
+            <span>2011 - 2012</span>
+            <span>Answer Sheet</span>
         </div>
-    </div>
-    <div class="div-download">
-        <a :href="paper.fileUrl" :download="paper.fileUrl"><img src="asset/images/download.png" class="center-block"></a>
-        <p>125 kb</p>
-    </div>
-    <div class="div-2-3-bar">
-        <span>PUT</span>
-        <span>Odd Semester</span>
-        <span>2011 - 2012</span>
-        <span>Answer Sheet</span>
-    </div>
-</div> -->
+    </div> -->
 
 
 

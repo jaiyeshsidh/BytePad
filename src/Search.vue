@@ -73,13 +73,6 @@ export default Main
             </div>
         </div>
     </div>
-    <questionpapers :papers="allPapers"></questionpapers>
-    <div id="mob-search">
-        <div class="in-mob-search">
-            <span data-toggle="modal" data-target="#myModal" class="fa fa-search">
-            </span>
-        </div>
-    </div>
     <div class="modal fade" id="myModal" role="dialog" style="display: none;">
         <div class="modal-dialog">
             <!-- Modal content-->
@@ -133,165 +126,176 @@ export default Main
             </div>  
         </div>
     </div>
+    <questionpapers :papers="allPapers"></questionpapers>
+    <div id="mob-search">
+        <div class="in-mob-search">
+            <span data-toggle="modal" data-target="#myModal" class="fa fa-search">
+            </span>
+        </div>
+    </div>
+    
    
 
 </template>
 
-<style>
-        
-        .mob-container{
-            padding:20px 0; 
-            background-color:#242c2d;
-        }
-      
-        
-        
-        .thumbnail  {
-            margin-bottom: 12px;
-        }
-        .single-list{
-            background-color: #efefef;
-            padding: 10px 20px;
-            /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.26);*/
-            border: 0 !important;
-        }
-        .single-list:hover{
-            background-color: #ececec;
-        }
-        .single-list .div-info{
-            display: inline-block;
-            width: calc(100% - 124px);
-        }
-        .single-list .div-download{
-            display: inline-block;
-            width: 120px;
-            vertical-align: sub;
-        }
-        .div-download img{
-            height: 50px;
-        }
-        .div-download p{
-            margin: 0;
-            font-size: 12px;
-            text-align: center;
-        }
-        .div-1{
-            display: inline-block;
-            width: 50%;
-            vertical-align: top;
-        }
-        .div-1 h1{
-            font-size: 22px;
-            margin-top: 10px;
-        }
-        .div-1 p{
-            font-size: 12px;
-            font-weight: bold;
-            color:#797979;
-        }
-        .div-1 span{
-            font-size: 10px;
-            color: #000;
-            background-color: #cecece;
-            padding: 3px 12px;
-            margin: 1px 3px;
-            display: inline-block;
-            border-radius: 20px;
-        }
-        .div-2{
-            display: inline-block;
-            width: 23.9%;
-            /*border-left: 2px solid #dedede;
-            border-right: 2px solid #dedede;*/
-        }
-        .text-sub{
-            font-size: 15px;
-        }
-        .div-3{
-            display: inline-block;
-            width: 23.9%;
-            /*border-right: 2px solid #dedede;*/
-        }
-        .sub-text{
-            font-size: 12px;
-            font-weight: bold;
-            color: #797979;
-        }
-        #main-qwerty{
-            overflow:auto;
-                padding-bottom: 120px;
-                padding-top: 180px;
-        }
-        /*Opera Fix*/
-        body:before {
-            content:"";
-            height:100%;
-            float:left;
-            width:0;
-            margin-top:-32767px;
-        }
-        @media (min-width: 768px){
-            #main-qwerty{
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-            }
-        }
-        .search-pad{
-            padding:6px 20px;
-        }
-        .span-search{
-            padding:0 10px
-        }
-        @media(max-width: 600px){
-            .span-search{
-                padding: 0;
-            }
-            .search-pad{
-                padding:6px 8px;
-            }
-        }
-        .div-2-3-bar span{
-            display: none;
-        }
-        .container{
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-        header .header-search-inner input + h6{
-        text-align: center;
-        opacity: 0.9;
-        transition: opacity 1s ease;
-        }
+<style type="text/css">
 
-        header .header-search-inner input:focus + h6{
-        opacity: 0;
-        }
+.mob-container{
+    padding:20px 0; 
+    background-color:#242c2d;
+}
 
-        header .header-search-inner:focus{
 
-        }
-        header .header-search-inner input{
-        width: 100%;
-        height: 50px;
-        color: #000;
-        border-radius: 300px;
-        outline: none;
-        border: 0px;
-        padding-left: 30px;
-        padding-right: 60px;
-        background-image: url(../images/search-icon.png);
-        background-size: 4%;
-        background-position: 95%;
-        background-repeat: no-repeat;
-        margin-top: 48vh;
-        -webkit-transition: margin-top 0.7s ease-in-out;
-        transition: margin-top 0.7s ease-in-out;
-        }
 
-        header .header-search-inner input:focus{
-        outline: none;
-        margin-top: 15vh;
-        }
+.thumbnail  {
+    margin-bottom: 12px;
+}
+.single-list{
+    background-color: #efefef;
+    padding: 10px 20px;
+    /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.26);*/
+    border: 0 !important;
+}
+.single-list:hover{
+    background-color: #ececec;
+}
+.single-list .div-info{
+    display: inline-block;
+    width: calc(100% - 124px);
+}
+.single-list .div-download{
+    display: inline-block;
+    width: 120px;
+    vertical-align:-webkit-baseline-middle;
+}
+.div-download img{
+    height: 50px !important;
+}
+.div-download p{
+    margin: 0;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+.div-1{
+    display: inline-block;
+    width: 50%;
+    vertical-align:-webkit-baseline-middle;
+}
+.div-1 h1{
+    font-size: 18px;
+    margin-top: 4px;
+}
+.div-1 p{
+    font-size: 12px;
+    font-weight: bold;
+    color:#797979;
+}
+.div-1 span{
+    font-size: 10px;
+    color: #000;
+    background-color: #cecece;
+    padding: 3px 12px;
+    margin: 1px 3px;
+    display: inline-block;
+    border-radius: 20px;
+}
+.div-2{
+    display: inline-block;
+    width: 23.9%;
+    vertical-align:-webkit-baseline-middle;
+    /*border-left: 2px solid #dedede;
+    border-right: 2px solid #dedede;*/
+}
+.text-sub{
+    font-size: 15px;
+}
+.div-3{
+    display: inline-block;
+    width: 23.9%;
+    vertical-align:-webkit-baseline-middle;
+    /*border-right: 2px solid #dedede;*/
+}
+.sub-text{
+    font-size: 12px;
+    font-weight: bold;
+    color: #797979;
+}
+#main-qwerty{
+    overflow:auto;
+        padding-bottom: 120px;
+        padding-top: 180px;
+}
+/*Opera Fix*/
+body:before {
+    content:"";
+    height:100%;
+    float:left;
+    width:0;
+    margin-top:-32767px;
+}
+@media (min-width: 768px){
+    #main-qwerty{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+.search-pad{
+    padding:6px 20px;
+}
+.span-search{
+    padding:0 10px
+}
+@media(max-width: 600px){
+    .span-search{
+        padding: 0;
+    }
+    .search-pad{
+        padding:6px 8px;
+    }
+}
+.div-2-3-bar span{
+    display: none;
+}
+.container{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+header .header-search-inner input + h6{
+text-align: center;
+opacity: 0.9;
+transition: opacity 1s ease;
+}
 
-    
+header .header-search-inner input:focus + h6{
+opacity: 0;
+}
+
+header .header-search-inner:focus{
+
+}
+header .header-search-inner input{
+width: 100%;
+height: 50px;
+color: #000;
+border-radius: 300px;
+outline: none;
+border: 0px;
+padding-left: 30px;
+padding-right: 60px;
+background-image: url(../images/search-icon.png);
+background-size: 4%;
+background-position: 95%;
+background-repeat: no-repeat;
+margin-top: 48vh;
+-webkit-transition: margin-top 0.7s ease-in-out;
+transition: margin-top 0.7s ease-in-out;
+}
+
+header .header-search-inner input:focus{
+outline: none;
+margin-top: 15vh;
+}
+
+
 </style>
