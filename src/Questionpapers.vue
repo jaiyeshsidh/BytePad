@@ -134,10 +134,11 @@ export default {
                             <h1><a :href="paper.openUrl" target="_blank" >{{paper.fileName | removeExt}}</a></h1>
 
                             <p style="margin:0;"> Tags :
-                                <span>{{paper.fileType}}</span>
+                                <span>{{paper.examType}}</span>
                                 <span>{{paper.semester}}</span>
                                 <span>{{paper.session}}</span>
-                                <span>{{paper.examType}}</span>
+                                <span>{{paper.paperType}}</span>
+                                <span>{{paper.fileType}}</span>
                             </p>
                         </div>
                         <div class="div-2">
@@ -167,10 +168,11 @@ export default {
                         <a :href="paper.openUrl"  target="_blank"><p>View</p></a>
                     </div>
                     <div class="div-2-3-bar">
-                        <span>{{paper.fileType}}</span>
+                        <span>{{paper.examType}}</span>
                         <span>{{paper.semester}}</span>
                         <span>{{paper.session}}</span>
-                        <span>{{paper.examType}}</span>
+                        <span>{{paper.paperType}}</span>
+                        <span>{{paper.fileType}}</span>
                     </div>
                 </div>
 

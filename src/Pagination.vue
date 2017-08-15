@@ -73,19 +73,21 @@ export default {
 </script>
 
 <template>
-  <ul class="pagination">
-    <li>
-      <a href="#" @click.prevent="pageChanged(1)" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li v-for="n in paginationRange" :class="activePage(n)">
-      <a href="#" @click.prevent="pageChanged(n)">{{ n }}</a>
-    </li>
-    <li>
-      <a href="#" @click.prevent="pageChanged(lastPage)" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
+  <div class="text-center">
+    <ul class="pagination">
+      <li>
+        <a href="#" @click.prevent="pageChanged(1)" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li v-for="n in paginationRange" :class="activePage(n)">
+        <a href="#" @click.prevent="pageChanged(n)">{{ n }}</a>
+      </li>
+      <li>
+        <a href="#" @click.prevent="pageChanged(lastPage)" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
