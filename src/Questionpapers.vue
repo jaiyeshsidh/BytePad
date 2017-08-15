@@ -106,8 +106,6 @@ export default {
 </script>
 
 <template>
-  <div class="row autoquestion" style="min-height:100%;" >
-    <div class="col-md-12 autoquestion" style="padding-top:180px; padding-bottom:120px;">
       <template v-if="totalItems">
         <ul class="list-group">
           <li class="list-group-items" v-bind:key="paper.fileName" v-for="paper in papersVisible">
@@ -129,59 +127,10 @@ export default {
         @page-changed="pageOneChanged">
         </pagination>
       </template>
-      <!-- <div class="well container" v-else>
+      <div class="well container" v-else>
         No papers found
-      </div>-->
-      <div class="container" v-else>
-      <div class="thumbnail single-list">
-            <div class="div-info">
-                <div class="div-1">
-                    <h1>Engineering Mathematics II</h1>
-                    <p style="margin:0;"> Tags :
-                        <span>Maths 2</span>
-                        <span>Semester 2</span>
-                        <span>NAS 201</span>
-                        <span>2011 - 2012</span>
-                    </p>
-                </div>
-                <div class="div-2">
-                    <div class="text-center" style="padding:6px; margin:0 10px; border-bottom: 2px solid #dedede;">
-                        <span class="sub-text">Exam Type :</span>
-                        <span class="text-sub">PUT</span>
-                    </div>
-                    <div class="text-center" style="padding:6px;">
-                        <span class="sub-text">Semester :</span>
-                        <span class="text-sub">Odd Semester</span>
-                    </div>
-                </div>
-                <div class="div-3">
-                    <div class="text-center" style="padding:6px; margin:0 10px; border-bottom: 2px solid #dedede;">
-                        <span class="sub-text">Session :</span>
-                        <span class="text-sub">2011 - 2012</span>
-                    </div>
-                    <div class="text-center" style="padding:6px;">
-                        <span class="sub-text">Paper Type :</span>
-                        <span class="text-sub">Answer Sheet</span>
-                    </div>
-                </div>
-            </div>
-            <div class="div-download">
-                <img src="asset/images/download.png" class="center-block">
-                <p>125 kb</p>
-            </div>
-            <div class="div-2-3-bar">
-                <span>PUT</span>
-                <span>Odd Semester</span>
-                <span>2011 - 2012</span>
-                <span>Answer Sheet</span>
-            </div>
-        </div>
       </div>
-
-    </div>
-  </div>
-
-  
+      
 </template>
 
 

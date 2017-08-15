@@ -102,10 +102,6 @@ export default Main
 
 <style>
         
-        html,body{
-            height: 100%;
-            padding: 0;
-        }
         .mob-container{
             padding:20px 0; 
             background-color:#242c2d;
