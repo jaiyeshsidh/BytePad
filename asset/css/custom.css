@@ -1119,16 +1119,22 @@ select{
     left:2.5%;
   }
 }
+
+#content-body{
+  margin-top:180px ;
+
+}
 @media(max-width:550px){
   .search-input .dropdown-menu{
     display: none;
   }
   .well{
-    margin-top:90px;
-    
+    margin-top:0px;   
+  }
+  #content-body{
+    margin-top:90px !important;
   }
 }
-
 .modal #mob-search-input input{
   width: 100%;
   background-color: #242c2d;

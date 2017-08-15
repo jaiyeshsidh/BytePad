@@ -73,6 +73,7 @@ export default Main
             </div>
         </div>
     </div>
+    <questionpapers :papers="allPapers"></questionpapers>
     <div id="mob-search">
         <div class="in-mob-search">
             <span data-toggle="modal" data-target="#myModal" class="fa fa-search">
@@ -123,11 +124,7 @@ export default Main
                         <div style="display:inline;">
                             <button type="button" class="btn btn-default search-btn" >Search</button>
                             <button class="mob-reset-btn" type="reset" value="Reset" @click="resetAll">Reset</button>
-                            <button class="mob-reset-btn" data-dismiss="modal" style="padding:10px 15px;display:inline;    padding: 20px 25px;
-    display: inline;
-    position: fixed;
-    bottom: 15px;
-    right: 15px;">X</button>
+                            <button class="mob-reset-btn" data-dismiss="modal" style="padding:10px 15px;display:inline;    padding: 20px 25px; display: inline; position: fixed; bottom: 15px; right: 15px;">X</button>
                         </div>
                     </div>
                     
@@ -136,7 +133,7 @@ export default Main
             </div>  
         </div>
     </div>
-   <questionpapers :papers="allPapers"></questionpapers>
+   
 
 </template>
 
@@ -146,7 +143,7 @@ export default Main
             padding:20px 0; 
             background-color:#242c2d;
         }
-       
+      
         
         
         .thumbnail  {
@@ -260,5 +257,41 @@ export default Main
             padding-left: 5px;
             padding-right: 5px;
         }
+        header .header-search-inner input + h6{
+        text-align: center;
+        opacity: 0.9;
+        transition: opacity 1s ease;
+        }
+
+        header .header-search-inner input:focus + h6{
+        opacity: 0;
+        }
+
+        header .header-search-inner:focus{
+
+        }
+        header .header-search-inner input{
+        width: 100%;
+        height: 50px;
+        color: #000;
+        border-radius: 300px;
+        outline: none;
+        border: 0px;
+        padding-left: 30px;
+        padding-right: 60px;
+        background-image: url(../images/search-icon.png);
+        background-size: 4%;
+        background-position: 95%;
+        background-repeat: no-repeat;
+        margin-top: 48vh;
+        -webkit-transition: margin-top 0.7s ease-in-out;
+        transition: margin-top 0.7s ease-in-out;
+        }
+
+        header .header-search-inner input:focus{
+        outline: none;
+        margin-top: 15vh;
+        }
+
     
 </style>

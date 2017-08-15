@@ -106,7 +106,10 @@ export default {
 </script>
 
 <template>
+<div id="content-body" class="container">
+
       <template v-if="totalItems">
+
         <ul class="list-group">
           <li class="list-group-items" v-bind:key="paper.fileName" v-for="paper in papersVisible">
             <div class="well row" :class="{'pdftype': pdfType(paper.fileType)}">
@@ -126,13 +129,14 @@ export default {
         :items-per-page="pageOne.totalItemsPerPage"
         @page-changed="pageOneChanged">
         </pagination>
+
       </template>
-      <div class="conatiner">
-        <div class="well" v-else>
+
+      <div class="well" v-else>
           No papers found
-        </div>
       </div>
-      
+
+</div>
 </template>
 
 
