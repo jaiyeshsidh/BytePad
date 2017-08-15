@@ -1099,6 +1099,7 @@ select{
 }
 .well{
   margin-top:180px;
+  margin: auto 10px;
   position: relative;
   z-index: -1;
   text-align: center;
@@ -1128,3 +1129,56 @@ select{
   }
 }
 
+.modal #mob-search-input input{
+  width: 100%;
+  background-color: #242c2d;
+  border: 0;
+  color: #ffc113;
+  height: 70px;
+  font-size: 13px;
+  padding: 0px 20px;
+}
+.modal #mob-search-input input:focus{
+  outline: none;
+}
+.modal #mob-search-input .dropdown-menu{
+  width: 100% !important;
+}
+.modal .search-btn {
+  width: auto;
+  padding: 15px 30px;
+  margin: 10px;
+  border: 0;
+  background-color: #ffc113;
+  color: #fff;
+  outline: none;
+  border-radius: 24ox;
+  /* position: fixed; */
+  z-index: 999;
+  /* left: 0; */
+  /* bottom: 0; */
+}
+.mob-refine select{
+  display: block;
+  background: #dedede;
+  border: 0;
+  border-radius: 40px;
+  width: 95%;
+  outline: none;
+  padding: 15px 30px;
+  margin: 8px;
+  text-align: center;
+}
+.mob-reset-btn{
+  margin: 10px;
+  outline: none;
+  padding: 15px 30px;
+  background-color: #242c2d;
+  border: 0;
+  border-radius: 40px;
+  color: #ffc113;
+  float: right;
+}
+button{
+  outline: none !important;
+}

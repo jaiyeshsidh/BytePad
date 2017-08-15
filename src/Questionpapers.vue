@@ -127,8 +127,10 @@ export default {
         @page-changed="pageOneChanged">
         </pagination>
       </template>
-      <div class="well container" v-else>
-        No papers found
+      <div class="conatiner">
+        <div class="well" v-else>
+          No papers found
+        </div>
       </div>
       
 </template>

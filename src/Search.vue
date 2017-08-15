@@ -80,22 +80,62 @@ export default Main
         </div>
     </div>
     <div class="modal fade" id="myModal" role="dialog" style="display: none;">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>  
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body" style="padding:0px;">
+                    <div id="mob-search-input">
+                        <!--input type="text" id="example" name="Search" placeholder="Enter Subject Name Here"-->
+                        <autocomplete :suggestions="subjects" :selection.sync="value" @get-papers="fetchQuestionPapers"></autocomplete>
+                    </div>
+                    <div class="mob-refine">
+                        <p style="text-align: center;margin-top: 20px;font-size: 12px;"> Refine Your Search Result more precisely</p>
+                        <select id="examtype" v-model="examType">
+                            <option selected disabled>Exam Type</option>
+                            <option :value="0" >All Exams</option>
+                            <option :value="1">UT</option>
+                            <option :value="2">PUT</option>
+                            <option :value="3">ST2</option>
+                            <option :value="4">ST1</option>
+                        </select>
+                        <!-- Changed Values -->
+                        <select id="session" v-model="session">
+                            <option selected disabled>Session</option>
+                            <option :value="0" >All Years</option>
+                            <option :value="1">2010-2011</option>
+                            <option :value="2">2011-2012</option>
+                            <option :value="3">2012-2013</option>
+                            <option :value="4">2013-2014</option>
+                            <option :value="5">2014-2015</option>
+                            <option :value="6">2015-2016</option>
+                            <option :value="7">2016-2017</option>
+                        </select>
+                        <select id="select-paper" v-model="paperType">
+                            <option selected disabled>Paper Type</option>
+                            <option :value="0">Question Paper</option>
+                            <option :value="1">Answer Paper</option>
+                        </select>
+                        <select id="sem" v-model="semester">
+                            <option selected disabled>Semester</option>
+                            <option :value="0">Even Semester</option>
+                            <option :value="1">Odd Semester</option>
+                        </select>
+                        <div style="display:inline;">
+                            <button type="button" class="btn btn-default search-btn" >Search</button>
+                            <button class="mob-reset-btn" type="reset" value="Reset" @click="resetAll">Reset</button>
+                            <button class="mob-reset-btn" data-dismiss="modal" style="padding:10px 15px;display:inline;    padding: 20px 25px;
+    display: inline;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;">X</button>
+                        </div>
+                    </div>
+                    
+                
+                </div>
+            </div>  
+        </div>
     </div>
-  </div>
    <questionpapers :papers="allPapers"></questionpapers>
 
 </template>
