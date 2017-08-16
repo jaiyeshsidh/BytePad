@@ -1,3 +1,6 @@
+import Index from "./Index.vue";
+import Search from "./Search.vue";
+
 const Vue = require('vue');
 const VueRouter = require('vue-router');
 
@@ -6,7 +9,7 @@ Vue.use(VueRouter);
 Vue.directive('focus',{
     priority: 100,
     bind: function() {
-      var self = this;
+      const self = this;
       this.bound = true;
 
       Vue.nextTick(function() {
@@ -20,17 +23,9 @@ Vue.directive('focus',{
     }
 });
 
-import Index from "./Index.vue";
-import Search from "./Search.vue";
+var App = Vue.extend({});
 
-
-var App = Vue.extend({})
-
-var router = new VueRouter()
-
-router.afterEach(function (transition) {
-  console.log('Successfully navigated to: ' + transition.to.path)
-})
+var router = new VueRouter();
 
 router.map({
     '/': {
@@ -43,4 +38,4 @@ router.map({
     }
 });
 
-router.start(App, 'body')
+router.start(App, 'body');
