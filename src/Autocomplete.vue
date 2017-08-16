@@ -11,7 +11,8 @@ export default {
     data() {
         return {
             open: false,
-            current: 0
+            current: 0,
+            selectionText: "",
         }
     },
     
@@ -22,44 +23,37 @@ export default {
         },
 
         selection: {
-            type: String,
+            type: Number,
             required: true,
-            twoWay: true
+            twoWay: true,
         }
     },
 
     computed: {
         matches() {
-            return this.suggestions.filter((str) => {
-                return str.toLowerCase().indexOf(this.selection.toLowerCase().replace('-','')) >= 0;
+            const termToMatch = new RegExp(this.selectionText.replace("-",""), "i");
+            return this.suggestions.filter((obj) => {
+                return termToMatch.test(obj.subjectName);
+                // return obj.subjectName.toLowerCase().indexOf(this.selectionText.toLowerCase().replace('-','')) >= 0;
             }).slice(0,7);
         },
 
         openSuggestion() {
-            return this.selection !== "" &&
+            return this.selectionText !== "" &&
                    this.matches.length != 0 &&
                    this.open === true;
         }
     },
 
     methods: {
-        enter(e) {
-            // console.log(e.target.value);
-            if(this.matches.length > 0 && e.target.value) {
-                this.selection = this.matches[this.current];
-                this.open = false;
-
+        enter() {
+            if (this.matches.length > 0 && this.openSuggestion) {
+                this.makeSelection();
             } else {
-              var subjectID = this.suggestions.indexOf(this.selection) + 1;
-              // console.log(subjectID);
-              if(subjectID){
-                router.go('/search?subjectID=' + subjectID);
-                this.$dispatch('get-papers', subjectID);
-              } else {
-                router.go('/search?subjectID=' + null);
-                this.$dispatch('get-papers', null);
-              }
-              this.selection = "";
+                router.go("/search?subjectID=" + this.selection);
+                this.$dispatch('search-papers');
+                this.selectionText = "";
+                this.selection = 0;
             }
         },
 
@@ -94,17 +88,19 @@ export default {
         },
 
         suggestionClick(index, event) {
-            // var self = this;
-            this.selection = this.matches[this.current];
-            this.open = false;
-            var subjectID = this.suggestions.indexOf(this.selection) + 1;
+            this.makeSelection();
             this.$els.search.focus();
         },
 
-
-
         mouseover(index) {
           this.current = index
+        },
+
+        makeSelection() {
+            this.selection = this.matches[this.current].id;
+            this.selectionText = this.matches[this.current].subjectName;
+            this.current = 0;
+            this.open = false;
         }
     }
 }
@@ -112,7 +108,7 @@ export default {
 </script>
 <template>
 <div style="position:relative" v-bind:class="{'open':openSuggestion}">
-    <input type="text" v-model="selection" name="search" placeholder="Enter Subject NAME or SUBJECT-CODE" autocomplete="off"
+    <input type="text" v-model="selectionText" name="search" placeholder="Enter Subject NAME or SUBJECT-CODE" autocomplete="off"
         @keydown.enter = 'enter'
         @keydown.down = 'down'
         @keydown.up = 'up'
@@ -121,11 +117,11 @@ export default {
         v-el:search
     />
     <ul class="dropdown-menu">
-        <li class="row" v-bind:key="suggestion" v-for="suggestion in matches"
+        <li class="row" v-bind:key="match" v-for="match in matches"
             v-bind:class="{'active': isActive($index)}"
             @mouseover="mouseover($index)"
         >
-            <a href="#" @click.prevent="suggestionClick($index, $event)">{{ suggestion }}</a>
+            <a href="#" @click.prevent="suggestionClick($index, $event)">{{ match.subjectName }}</a>
         </li>
     </ul>
 </div>

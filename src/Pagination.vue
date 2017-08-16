@@ -45,7 +45,7 @@ export default {
       let start =
       this.currentPage - this.visiblePages / 2 <= 0
       ? 1 : this.currentPage + this.visiblePages / 2 > this.lastPage
-      ? Util.lowerBound(this.lastPage - this.visiblePages + 1, 1)
+      ? Math.floor(this.lastPage - this.visiblePages + 1)
       : Math.ceil(this.currentPage - this.visiblePages / 2)
 
       let range = []
@@ -80,7 +80,7 @@ export default {
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
-      <li v-for="n in paginationRange" :class="activePage(n)">
+      <li v-for="n in paginationRange" :class="activePage(n)" :key="n">
         <a href="#" @click.prevent="pageChanged(n)">{{ n }}</a>
       </li>
       <li>
