@@ -65,13 +65,19 @@ export default Main
                 </div>
             </div>
         </div>
+        <div id="mob-search">
+            <div class="in-mob-search">
+                <span data-toggle="modal" data-target="#myModal" class="fa fa-search">
+                </span>
+            </div>
+        </div>
         <div class="modal fade" id="myModal" role="dialog" style="display: none;background-color:#fff;">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content" style="background-color:transparent;">
                     <div class="modal-body" style="padding:0px;">
                         <div id="mob-search-input">
-                            <autocomplete :suggestions="subjects" :selection.sync="selectionIndex" @get-papers="fetchQuestionPapers"></autocomplete>
+                            <autocomplete :suggestions="subjects" :selection.sync="selectionIndex" @search-papers="searchPapers"></autocomplete>
                         </div>
                         <div class="mob-refine">
                             <p style="text-align: center;margin-top: 20px;font-size: 12px;"> Refine Your Search Result more precisely</p>
@@ -117,12 +123,7 @@ export default Main
             </div>
         </div>
         <questionpapers :papers="allPapers" :exam-type="examType" :session="session" :paper-type="paperType" :semester="semester"></questionpapers>
-        <div id="mob-search">
-            <div class="in-mob-search">
-                <span data-toggle="modal" data-target="#myModal" class="fa fa-search">
-                </span>
-            </div>
-        </div>
+        
     </div>
 </template>
 
