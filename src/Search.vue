@@ -133,7 +133,15 @@ export default Main
     background-color: #242c2d;
 }
 
-
+@media (max-width:768px){
+  #search-focus input{
+    width: calc(100% - 70px) !important;
+    display: inline-block;
+    background-image: none !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
 
 .thumbnail {
     margin-bottom: 12px;

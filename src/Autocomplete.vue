@@ -109,7 +109,7 @@ export default {
 </script>
 <template>
 <div style="position:relative" v-bind:class="{'open':openSuggestion}">
-    <input type="text" v-model="selectionText" name="search" placeholder="Enter Subject NAME or SUBJECT-CODE" autocomplete="off"
+    <input type="text" v-model="selectionText" name="search" placeholder="Enter Subject NAME or SUBJECT-CODE" autocomplete="off" autofocus
         @keydown.enter = 'enter'
         @keydown.down = 'down'
         @keydown.up = 'up'
@@ -117,6 +117,7 @@ export default {
         v-focus
         v-el:search
     />
+    <button type="button" id="mob-home-search"><span class="fa fa-search-minus" style="font-size:18px;"></span></button></a>
     <ul class="dropdown-menu">
         <li class="row" v-bind:key="match" v-for="match in matches"
             v-bind:class="{'active': isActive($index)}"
