@@ -51,9 +51,10 @@ export default {
                 this.makeSelection();
             } else {
                 router.go("/search?subjectID=" + this.selection);
-                this.$dispatch('search-papers');
+                this.$dispatch("search-papers");
                 this.selectionText = "";
                 this.selection = 0;
+                this.$dispatch("close-modal");
             }
         },
 
