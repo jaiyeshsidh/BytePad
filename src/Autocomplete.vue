@@ -117,7 +117,7 @@ export default {
         v-focus
         v-el:search
     />
-    <button type="button" id="mob-home-search"><span class="fa fa-search-minus" style="font-size:18px;"></span></button></a>
+    <button type="button" id="mob-home-search"><span class="fa fa-search" style="font-size:18px;"></span></button></a>
     <ul class="dropdown-menu">
         <li class="row" v-bind:key="match" v-for="match in matches"
             v-bind:class="{'active': isActive($index)}"
