@@ -1099,6 +1099,7 @@ select{
   width: -webkit-fill-available;
   border-radius: 0;
   border: 0;
+  width: 99.1%;
 }
 #search-focus .dropdown-menu{
   width: 50%;
