@@ -50,7 +50,7 @@ export default Main
                     <select id="select-paper" v-model="paperType">
                         <option selected disabled :value="-1">Paper Type</option>
                         <option>Question Paper</option>
-                        <option>Answer Paper</option>
+                        <option>Solution</option>
                     </select>
                     <select id="sem" v-model="semester">
                         <option selected disabled :value="-1">Semester</option>
@@ -103,13 +103,13 @@ export default Main
                             </select>
                             <select id="select-paper" v-model="paperType">
                                 <option selected disabled :value="-1">Paper Type</option>
-                                <option value="Question Paper">Question Paper</option>
-                                <option value="Solution">Answer Paper</option>
+                                <option>Question Paper</option>
+                                <option>Solution</option>
                             </select>
                             <select id="sem" v-model="semester">
                                 <option selected disabled :value="-1">Semester</option>
-                                <option value="Even">Even Semester</option>
-                                <option value="Odd">Odd Semester</option>
+                                <option>Even Semester</option>
+                                <option>Odd Semester</option>
                             </select>
                             <div style="display:inline;">
                                 <button type="button" data-dismiss="modal" class="btn btn-default search-btn" @click="searchPapers">Search</button>

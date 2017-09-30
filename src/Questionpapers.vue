@@ -14,7 +14,7 @@ export default {
     return {
       pageOne: {
         currentPage: 1,
-        totalItemsPerPage: 5
+        totalItemsPerPage: 4
       }
     }
   },
@@ -45,7 +45,9 @@ export default {
     },
 
     papersVisible: function() {
-      return this.subjectPapers.slice((this.pageOne.currentPage-1)*this.pageOne.totalItemsPerPage, this.pageOne.currentPage*this.pageOne.totalItemsPerPage);
+      const startItem = (this.pageOne.currentPage - 1) * this.pageOne.totalItemsPerPage;
+      const endItem = this.pageOne.currentPage * this.pageOne.totalItemsPerPage;
+      return this.subjectPapers.slice(startItem, endItem);
     },
 
     subjectPapers: function() {
@@ -69,7 +71,7 @@ export default {
         temp.paperType = val.paper_type === 1 ? "Question Paper" : "Solution";
 
         // add semester type even or odd
-        temp.semester = val.semester === 1 ? "Even" : "Odd";
+        temp.semester = val.semester === 1 ? "Even Semester" : "Odd Semester";
 
         temp.subjectCodeId = val.subject_code_id;
 

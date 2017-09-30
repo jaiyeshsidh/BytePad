@@ -30,7 +30,7 @@ export default {
   computed: {
     lastPage () {
       if (this.totalPages) {
-        return this.totalPages
+        return this.totalPages;
       } else {
         return this.totalItems % this.itemsPerPage === 0
         ? this.totalItems / this.itemsPerPage
@@ -42,19 +42,30 @@ export default {
       /**
       * Code for pagination range here
       */
-      let start =
-      this.currentPage - this.visiblePages / 2 <= 0
-      ? 1 : this.currentPage + this.visiblePages / 2 > this.lastPage
-      ? Math.floor(this.lastPage - this.visiblePages + 1)
-      : Math.ceil(this.currentPage - this.visiblePages / 2)
+      // let start =
+      // this.currentPage - this.visiblePages / 2 <= 0
+      // ? 1 : this.currentPage + this.visiblePages / 2 > this.lastPage
+      // ? Math.ceil(this.lastPage - this.visiblePages + 1)
+      // : Math.ceil(this.currentPage - this.visiblePages / 2)
+      let start = 1;
 
-      let range = []
+      if (this.currentPage > (this.visiblePages) / 2) {
+        start = this.currentPage - Math.floor(this.visiblePages / 2);
 
-      for (let i = 0; i < this.visiblePages && i < this.lastPage; i++) {
-        range.push(start + i)
+        if (this.currentPage > (this.lastPage - this.visiblePages / 2)) {
+          start = this.lastPage > this.visiblePages
+          ? (this.lastPage - this.visiblePages) + 1
+          : 1;
+        }
       }
 
-      return range
+      let range = [];
+
+      for (let i = 0; i < this.visiblePages && start + i <= this.lastPage; i++) {
+        range.push(start + i);
+      }
+
+      return range;
     }
   },
 
@@ -76,7 +87,7 @@ export default {
   <div class="text-center">
     <ul class="pagination">
       <li>
-        <a href="#" @click.prevent="pageChanged(1)" aria-label="Previous">
+        <a href="#" @click.prevent="pageChanged(1)" aria-label="First Page">
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
@@ -84,7 +95,7 @@ export default {
         <a href="#" @click.prevent="pageChanged(n)">{{ n }}</a>
       </li>
       <li>
-        <a href="#" @click.prevent="pageChanged(lastPage)" aria-label="Next">
+        <a href="#" @click.prevent="pageChanged(lastPage)" aria-label="Last Page">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>
