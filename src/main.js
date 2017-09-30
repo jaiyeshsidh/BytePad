@@ -77,6 +77,10 @@ export default {
 
     searchPapers: function() {
       this.fetchQuestionPapers(this.selectionIndex);
+    },
+
+    closeModal: function() {
+      this.$els.modalclosebutton.click();
     }
   }
 };

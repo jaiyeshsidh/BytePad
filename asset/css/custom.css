@@ -1099,6 +1099,7 @@ select{
   width: -webkit-fill-available;
   border-radius: 0;
   border: 0;
+  width: 99.1%;
 }
 #search-focus .dropdown-menu{
   width: 50%;
@@ -1118,7 +1119,19 @@ select{
   z-index: -1;
   text-align: center;
 }
+#mob-home-search{
+  display: none;
+}
 @media(max-width:768px){
+  
+  #search-focus #mob-home-search{
+    display: inline-block;
+    width: 51px;
+    height: 52px;
+    background-color: #fcbd20;
+    border: 0;
+    margin: 1px;
+  }
   #header .header-search-inner input{
     margin:0 !important; 
   }
@@ -1132,6 +1145,7 @@ select{
     width: 95%;
     left:2.5%;
   }
+  
 }
 
 #content-body{

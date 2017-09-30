@@ -50,7 +50,7 @@ export default Main
                     <select id="select-paper" v-model="paperType">
                         <option selected disabled :value="-1">Paper Type</option>
                         <option>Question Paper</option>
-                        <option>Answer Paper</option>
+                        <option>Solution</option>
                     </select>
                     <select id="sem" v-model="semester">
                         <option selected disabled :value="-1">Semester</option>
@@ -77,7 +77,7 @@ export default Main
                 <div class="modal-content" style="background-color:transparent;">
                     <div class="modal-body" style="padding:0px;">
                         <div id="mob-search-input">
-                            <autocomplete :suggestions="subjects" :selection.sync="selectionIndex" @search-papers="searchPapers"></autocomplete>
+                            <autocomplete :suggestions="subjects" :selection.sync="selectionIndex" @search-papers="searchPapers" @close-modal="closeModal"></autocomplete>
                         </div>
                         <div class="mob-refine">
                             <p style="text-align: center;margin-top: 20px;font-size: 12px;"> Refine Your Search Result more precisely</p>
@@ -103,18 +103,18 @@ export default Main
                             </select>
                             <select id="select-paper" v-model="paperType">
                                 <option selected disabled :value="-1">Paper Type</option>
-                                <option value="Question Paper">Question Paper</option>
-                                <option value="Solution">Answer Paper</option>
+                                <option>Question Paper</option>
+                                <option>Solution</option>
                             </select>
                             <select id="sem" v-model="semester">
                                 <option selected disabled :value="-1">Semester</option>
-                                <option value="Even">Even Semester</option>
-                                <option value="Odd">Odd Semester</option>
+                                <option>Even Semester</option>
+                                <option>Odd Semester</option>
                             </select>
                             <div style="display:inline;">
                                 <button type="button" data-dismiss="modal" class="btn btn-default search-btn" @click="searchPapers">Search</button>
                                 <button class="mob-reset-btn" type="reset" value="Reset" @click="resetAll">Reset</button>
-                                <button class="mob-reset-btn" data-dismiss="modal" style="display:inline;padding: 20px 25px; position: fixed; top: 0; right: 0; color: #242c2d; margin: 5px; background-color: #ffc113; ">X</button>
+                                <button class="mob-reset-btn" data-dismiss="modal" style="display:inline;padding: 20px 25px; position: fixed; top: 0; right: 0; color: #242c2d; margin: 5px; background-color: #ffc113;" v-el:modalclosebutton>X</button>
                             </div>
                         </div>
     
@@ -133,7 +133,15 @@ export default Main
     background-color: #242c2d;
 }
 
-
+@media (max-width:768px){
+  #search-focus input{
+    width: calc(100% - 70px) !important;
+    display: inline-block;
+    background-image: none !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
 
 .thumbnail {
     margin-bottom: 12px;
