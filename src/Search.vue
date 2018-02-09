@@ -46,6 +46,7 @@ export default Main
                         <option>2014-2015</option>
                         <option>2015-2016</option>
                         <option>2016-2017</option>
+                        <option>2017-2018</option>
                     </select>
                     <select id="select-paper" v-model="paperType">
                         <option selected disabled :value="-1">Paper Type</option>

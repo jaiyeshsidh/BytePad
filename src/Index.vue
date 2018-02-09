@@ -18,7 +18,7 @@ export default Main
                     </div>
                     <div id="search-focus">
                         <autocomplete :suggestions="subjects" :selection.sync="selectionIndex"></autocomplete>
-                        <h6>Eg. Power Electronics or NAS 201 or Mathematicsc III</h6>
+                        <h6>Eg. Power Electronics or AS 201 or Mathematics III</h6>
                     </div>
                 </div>
             </div>

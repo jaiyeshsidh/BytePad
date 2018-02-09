@@ -35,7 +35,7 @@ export default {
   methods: {
     fetchSubjectList: function() {
       this.$http
-        .get("https://testapi.silive.in/api/subject_detail")
+        .get("http://testapi.silive.in/api/subject_detail")
         .then(
           (response) => {
             return response.json();
@@ -55,7 +55,7 @@ export default {
       const subjectID = id === 0 ? null : id;
 
       this.$http
-        .get("https://testapi.silive.in/api/get_list_?subject_id=" + subjectID)
+        .get("http://testapi.silive.in/api/get_list_?subject_id=" + subjectID)
         .then(
           (response) => {
             return response.json();
